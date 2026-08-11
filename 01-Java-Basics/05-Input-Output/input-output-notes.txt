@@ -1,0 +1,154 @@
+Input/Output in Java
+====================
+
+1. What is Input/Output (I/O)?
+Input means taking data from the user or from a file.
+Output means displaying or sending data to the screen or another destination.
+
+In simple words:
+- Input = getting information
+- Output = showing information
+
+2. Why is I/O used?
+I/O is used to:
+- read user input
+- display results
+- show messages
+- work with files and external data
+
+3. Basic output in Java
+The most common output statement is:
+System.out.println();
+
+Example:
+System.out.println("Hello Java");
+
+What it does:
+- prints text on the screen
+- moves to the next line
+
+Other output method:
+System.out.print();
+
+Example:
+System.out.print("Hello");
+System.out.print(" Java");
+
+Difference:
+- println() prints and moves to the next line
+- print() prints without moving to the next line
+
+4. Basic input in Java
+To take input from the keyboard, we use Scanner.
+
+Syntax:
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+
+Example:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your name:");
+        String name = sc.nextLine();
+        System.out.println("Hello " + name);
+    }
+}
+
+5. Reading different types of input
+A. Read a string
+String name = sc.nextLine();
+
+B. Read an integer
+int age = sc.nextInt();
+
+C. Read a double
+double price = sc.nextDouble();
+
+D. Read a boolean
+boolean flag = sc.nextBoolean();
+
+6. Simple examples
+Example 1: Print text
+System.out.println("Welcome to Java");
+
+Example 2: Print a number
+int age = 20;
+System.out.println(age);
+
+Example 3: Read name from user
+Scanner sc = new Scanner(System.in);
+String name = sc.nextLine();
+System.out.println("Your name is " + name);
+
+Example 4: Read age from user
+Scanner sc = new Scanner(System.in);
+int age = sc.nextInt();
+System.out.println("Your age is " + age);
+
+7. Real-world example
+Imagine a login system.
+The program asks the user for their username and password.
+
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter username:");
+String username = sc.nextLine();
+
+System.out.println("Enter password:");
+String password = sc.nextLine();
+
+System.out.println("Welcome " + username);
+
+Here, input is used to get user data, and output is used to show a message.
+
+8. Important concept: String concatenation
+You can combine text and variables using +.
+
+Example:
+String name = "Asha";
+int age = 21;
+System.out.println("My name is " + name + " and I am " + age);
+
+9. Common mistakes
+- Forgetting to import Scanner
+import java.util.Scanner;
+
+- Using nextInt() before nextLine()
+This can cause input issues.
+
+- Mixing print and println incorrectly
+System.out.print("Hello");
+System.out.println(" World");
+
+- Not closing the scanner
+sc.close();
+
+10. Practice questions
+1. What is the difference between print() and println()?
+2. Which class is used to take input from the keyboard?
+3. Write code to read a string from the user.
+4. What is the use of nextInt()?
+5. What is the difference between input and output?
+
+11. Interview questions
+1. What is input/output in Java?
+2. Why do we use Scanner in Java?
+3. What is the difference between print() and println()?
+4. What is the purpose of nextLine()?
+5. How do you read an integer from the user?
+
+12. Small coding challenge
+Write a Java program that:
+- asks the user for their name
+- asks the user for their age
+- prints a message like:
+Hello John, you are 20 years old.
+
+Hint:
+Scanner sc = new Scanner(System.in);
+String name = sc.nextLine();
+int age = sc.nextInt();
+System.out.println("Hello " + name + ", you are " + age + " years old.");

@@ -1,0 +1,950 @@
+JAVA PRACTICE QUESTIONS
+========================
+
+Practice every topic in this order:
+Level 1 - Basic
+Level 2 - Practice
+Level 3 - Problem Solving
+Level 4 - Interview
+
+01 - JAVA BASICS
+================
+
+01-JDK-JRE-JVM
+--------------
+1. What is JDK, JRE and JVM? Explain with a diagram.
+2. Explain the complete lifecycle of a .java file.
+3. Why is Java platform independent but JVM platform dependent?
+4. What happens internally when you run java Main?
+5. Explain bytecode and why it is important.
+6. What is the difference between JDK, JRE and JVM in practical development?
+7. Can Java run without JDK? Can Java run without JVM?
+
+02-Variables
+------------
+1. Create variables for your name, age, salary and city.
+2. Demonstrate local, instance and static variables.
+3. Swap two variables using a third variable.
+4. Swap two numbers without using a third variable.
+5. Predict output involving variable scope.
+6. Demonstrate variable shadowing.
+7. Identify which variables belong to a method and which belong to an object.
+
+03-Data Types
+-------------
+1. Declare variables using all 8 primitive data types.
+2. Print the size/range of each primitive type.
+3. Convert int to double.
+4. Convert double to int.
+5. Demonstrate implicit type casting.
+6. Demonstrate explicit type casting.
+7. What happens when a large double is cast to int?
+8. Predict output from mixed-type arithmetic expressions.
+
+04-Operators
+------------
+1. Create programs using arithmetic operators.
+2. Demonstrate relational operators.
+3. Demonstrate logical &&, || and !.
+4. Demonstrate ++ and --.
+5. Predict output using prefix/postfix operators.
+6. Use ternary operator to find maximum of two numbers.
+7. Demonstrate bitwise operators.
+8. Solve an expression containing arithmetic, relational and logical operators.
+
+05-Input Output
+---------------
+1. Read name, age and salary from the user.
+2. Read two integers and print their sum.
+3. Calculate area of a rectangle from user input.
+4. Read 5 subject marks and calculate percentage.
+5. Build a simple calculator.
+6. Read a character and determine whether it is a vowel.
+7. Create a student information program using user input.
+
+06-Conditional Statements
+-------------------------
+1. Check whether a number is positive, negative or zero.
+2. Check whether a number is even or odd.
+3. Find the largest of two numbers.
+4. Find the largest of three numbers.
+5. Check whether a year is a leap year.
+6. Check whether a character is uppercase, lowercase, digit or special character.
+7. Create a grading system using marks.
+8. Create an ATM menu using switch.
+9. Create a basic login system using username and password.
+
+07-Loops
+--------
+1. Print numbers from 1 to 100.
+2. Print even numbers from 1 to 100.
+3. Print odd numbers from 1 to 100.
+4. Print multiplication table.
+5. Find sum of first N numbers.
+6. Find factorial.
+7. Reverse a number.
+8. Count digits in a number.
+9. Check palindrome number.
+10. Check Armstrong number.
+11. Check prime number.
+12. Print all primes between 1 and 1000.
+13. Generate Fibonacci series.
+14. Print star patterns.
+15. Create a number guessing game.
+
+08-Arrays
+---------
+1. Create and print an integer array.
+2. Find sum and average.
+3. Find maximum and minimum.
+4. Count even and odd elements.
+5. Search for an element.
+6. Reverse an array.
+7. Copy one array into another.
+8. Find second-largest element.
+9. Remove duplicate elements.
+10. Sort an array without Arrays.sort().
+11. Merge two arrays.
+12. Find frequency of each element.
+13. Rotate an array left.
+14. Rotate an array right.
+15. Find the missing number from 1 to N.
+
+09-Strings
+----------
+1. Reverse a String.
+2. Check whether a String is palindrome.
+3. Count vowels and consonants.
+4. Count words.
+5. Count characters.
+6. Remove spaces.
+7. Remove duplicate characters.
+8. Find frequency of each character.
+9. Find first non-repeated character.
+10. Check whether two strings are anagrams.
+11. Reverse each word in a sentence.
+12. Find the longest word.
+13. Compare == and equals().
+14. Implement common String operations without shortcuts.
+
+10-Methods
+----------
+1. Create a method to add two numbers.
+2. Create calculator methods.
+3. Create a method to check prime numbers.
+4. Create a method to calculate factorial.
+5. Create a method to reverse a number.
+6. Demonstrate method overloading.
+7. Create overloaded methods for calculating area.
+8. Demonstrate pass-by-value.
+9. Create a utility class containing mathematical methods.
+
+
+02 - OBJECT ORIENTED PROGRAMMING
+================================
+
+01-Classes-Objects
+------------------
+1. Create a Student class.
+2. Create an Employee class.
+3. Create a Car class with properties and methods.
+4. Create 5 Student objects.
+5. Create a BankAccount class.
+6. Model a Book object.
+7. Build a Library system using multiple classes.
+
+02-Constructors
+---------------
+1. Create a default constructor.
+2. Create a parameterized constructor.
+3. Create multiple constructors.
+4. Demonstrate constructor overloading.
+5. Use this inside constructors.
+6. Create a Student with multiple initialization options.
+7. Design constructors for Employee.
+
+03-Encapsulation
+----------------
+1. Create private fields with getters/setters.
+2. Create an encapsulated BankAccount.
+3. Prevent negative balance.
+4. Validate age before setting it.
+5. Create an immutable-like Student.
+6. Build a secure User class with validation.
+
+04-Inheritance
+--------------
+1. Create Animal -> Dog.
+2. Create Vehicle -> Car.
+3. Demonstrate single inheritance.
+4. Demonstrate multilevel inheritance.
+5. Use super.
+6. Override a parent method.
+7. Create Employee -> Developer -> SeniorDeveloper hierarchy.
+
+05-Polymorphism
+---------------
+1. Demonstrate method overloading.
+2. Demonstrate method overriding.
+3. Use parent reference with child object.
+4. Demonstrate runtime polymorphism.
+5. Predict output from overridden methods.
+6. Create a payment system supporting Cash, Card and UPI.
+
+06-Abstraction
+--------------
+1. Create an abstract Animal class.
+2. Create abstract Shape.
+3. Calculate areas using abstract methods.
+4. Create an abstract Payment class.
+5. Design an abstract notification system.
+
+07-Interfaces
+-------------
+1. Create a basic interface.
+2. Implement an interface in multiple classes.
+3. Implement multiple interfaces.
+4. Use default interface methods.
+5. Use static interface methods.
+6. Create PaymentMethod implementations for Card, UPI and NetBanking.
+
+08-Static-Final
+---------------
+1. Create static variables.
+2. Create static methods.
+3. Demonstrate static blocks.
+4. Create constants using final.
+5. Explain final variable, method and class.
+6. Create a Company class with a shared company name.
+
+
+03 - EXCEPTION HANDLING
+=======================
+
+01-Try-Catch
+------------
+1. Handle divide-by-zero.
+2. Handle array index exception.
+3. Handle invalid number input.
+4. Use multiple catch blocks.
+5. Predict exception output.
+6. Build a calculator that does not crash on invalid input.
+
+02-Finally
+----------
+1. Demonstrate finally.
+2. Test finally with exception.
+3. Test finally without exception.
+4. Test return inside try.
+5. When might finally not execute?
+
+03-Throw-Throws
+---------------
+1. Use throw for invalid age.
+2. Use throws with file operations.
+3. Create a method that throws an exception.
+4. Explain throw vs throws.
+5. Validate bank withdrawal using exceptions.
+
+04-Custom-Exceptions
+--------------------
+1. Create InvalidAgeException.
+2. Create InsufficientBalanceException.
+3. Create InvalidPasswordException.
+4. Create multiple custom exceptions.
+5. Build a bank transaction system using custom exceptions.
+
+
+04 - COLLECTIONS
+================
+
+01-List
+-------
+1. Create and modify a List.
+2. Add, remove and search elements.
+3. Iterate through a List.
+4. Sort a List.
+5. Find duplicates.
+
+02-ArrayList
+------------
+1. Store 10 students.
+2. Find a student by ID.
+3. Remove a student.
+4. Sort students by name.
+5. Find highest marks.
+6. Build a Student Management System.
+
+03-LinkedList
+-------------
+1. Add/remove elements.
+2. Add at beginning/end.
+3. Compare LinkedList and ArrayList.
+4. Implement a queue using LinkedList.
+5. Build browser history using LinkedList.
+
+04-Set
+------
+1. Remove duplicates using Set.
+2. Find unique numbers.
+3. Compare Set and List.
+4. Find common elements between two collections.
+
+05-HashSet
+----------
+1. Store unique usernames.
+2. Detect duplicates.
+3. Find union/intersection.
+4. Understand why order is not guaranteed.
+5. Remove duplicate objects using HashSet.
+
+06-Map
+------
+1. Create key-value pairs.
+2. Iterate over keys and values.
+3. Check whether key exists.
+4. Count frequencies.
+5. Build a phonebook.
+
+07-HashMap
+----------
+1. Count character frequency.
+2. Count word frequency.
+3. Find highest-frequency element.
+4. Sort a Map by value.
+5. Create an employee ID -> Employee database.
+
+08-Queue
+--------
+1. Create a queue.
+2. Add/remove elements.
+3. Understand FIFO.
+4. Implement a customer waiting queue.
+5. Build a ticket booking queue.
+
+
+05 - GENERICS
+=============
+
+1. Create a generic class Box<T>.
+2. Create generic methods.
+3. Create Pair<K,V>.
+4. Use List<Integer> and List<String>.
+5. Demonstrate why generics prevent type errors.
+6. Understand wildcard <?>.
+7. Practice <? extends Number>.
+8. Practice <? super Integer>.
+9. Build a generic repository class.
+
+
+06 - FILE HANDLING
+==================
+
+1. Create a file.
+2. Write text to a file.
+3. Read text from a file.
+4. Append content.
+5. Count lines.
+6. Count words.
+7. Copy one file to another.
+8. Search for a word inside a file.
+9. Handle FileNotFoundException.
+10. Build a text-based notes application using file storage.
+
+
+07 - MULTITHREADING
+===================
+
+01-Thread
+---------
+1. Create a thread by extending Thread.
+2. Override run().
+3. Start multiple threads.
+4. Print numbers from multiple threads.
+5. Observe execution order.
+
+02-Runnable
+-----------
+1. Create a thread using Runnable.
+2. Run multiple Runnable tasks.
+3. Compare Thread vs Runnable.
+4. Create simultaneous task simulations.
+
+03-Synchronization
+------------------
+1. Create a shared counter.
+2. Demonstrate race condition.
+3. Fix it using synchronized.
+4. Synchronize a method.
+5. Synchronize a block.
+6. Build a thread-safe bank account.
+
+04-ExecutorService
+-------------------
+1. Create a fixed thread pool.
+2. Submit tasks.
+3. Use Callable.
+4. Use Future.
+5. Shut down ExecutorService.
+6. Build a multi-task processing system.
+
+
+08 - JAVA 8 FEATURES
+====================
+
+01-Lambda Expressions
+---------------------
+1. Create a lambda for addition.
+2. Create a lambda for string comparison.
+3. Sort a list using lambda.
+4. Filter numbers using lambda.
+5. Replace anonymous classes with lambdas.
+
+02-Functional Interfaces
+------------------------
+1. Create your own functional interface.
+2. Use Predicate.
+3. Use Consumer.
+4. Use Function.
+5. Use Supplier.
+6. Build a validation system using functional interfaces.
+
+03-Stream API
+-------------
+1. Filter even numbers.
+2. Map numbers to squares.
+3. Sort a list.
+4. Find maximum/minimum.
+5. Count elements.
+6. Remove duplicates.
+7. Group objects.
+8. Calculate average.
+9. Find second-highest number.
+10. Process an Employee list using Stream API.
+
+04-Optional
+-----------
+1. Create an Optional.
+2. Use isPresent.
+3. Use orElse.
+4. Use orElseGet.
+5. Use orElseThrow.
+6. Retrieve a user safely without NullPointerException.
+
+05-Date-Time API
+----------------
+1. Print current date.
+2. Print current time.
+3. Calculate age.
+4. Add/subtract days.
+5. Compare two dates.
+6. Calculate difference between dates.
+7. Build an appointment date calculator.
+
+
+09 - DSA
+========
+
+01-Complexity
+------------
+1. Find complexity of a single loop.
+2. Find complexity of nested loops.
+3. Find complexity of sequential loops.
+4. Analyze binary search.
+5. Analyze recursive functions.
+6. Compare O(1), O(log n), O(n), O(n log n), O(n^2).
+
+02-Arrays
+---------
+Beginner:
+1. Find maximum.
+2. Find minimum.
+3. Reverse array.
+4. Find sum.
+5. Count frequency.
+
+Intermediate:
+6. Two Sum.
+7. Move zeroes to end.
+8. Remove duplicates.
+9. Rotate array.
+10. Find missing number.
+11. Find duplicate number.
+12. Merge sorted arrays.
+
+Advanced:
+13. Maximum subarray sum.
+14. Product of array except self.
+15. Majority element.
+16. Merge intervals.
+17. Trapping rain water.
+
+03-Strings
+----------
+1. Reverse string.
+2. Palindrome.
+3. Anagram.
+4. Character frequency.
+5. First non-repeating character.
+6. Longest common prefix.
+7. Longest substring without repeating characters.
+8. String compression.
+9. Valid parentheses.
+10. Longest palindromic substring.
+
+04-LinkedList
+-------------
+1. Create a linked list.
+2. Insert at beginning.
+3. Insert at end.
+4. Delete a node.
+5. Search a node.
+6. Reverse linked list.
+7. Find middle node.
+8. Detect cycle.
+9. Remove cycle.
+10. Merge two sorted lists.
+11. Find intersection.
+12. Reverse linked list in groups of K.
+
+05-Stack
+--------
+1. Implement Stack using array.
+2. Implement Stack using LinkedList.
+3. Reverse a string using Stack.
+4. Check balanced parentheses.
+5. Evaluate postfix expression.
+6. Next greater element.
+7. Min Stack.
+8. Largest rectangle in histogram.
+
+06-Queue
+--------
+1. Implement queue using array.
+2. Implement queue using LinkedList.
+3. Implement circular queue.
+4. Implement queue using two stacks.
+5. Generate binary numbers.
+6. Sliding window maximum.
+7. First non-repeating character in a stream.
+
+07-Hashing
+----------
+1. Frequency counter.
+2. Two Sum.
+3. Find duplicates.
+4. Find intersection.
+5. Longest consecutive sequence.
+6. Subarray with sum K.
+7. Count subarrays with zero sum.
+8. Longest subarray with equal 0s and 1s.
+
+08-Recursion
+------------
+1. Print 1 to N.
+2. Print N to 1.
+3. Factorial.
+4. Fibonacci.
+5. Sum of digits.
+6. Reverse string.
+7. Power calculation.
+8. Binary search recursively.
+9. Generate subsets.
+10. Generate permutations.
+11. Tower of Hanoi.
+12. N-Queens.
+
+09-Trees
+--------
+1. Create binary tree.
+2. Inorder traversal.
+3. Preorder traversal.
+4. Postorder traversal.
+5. Level-order traversal.
+6. Find tree height.
+7. Count nodes.
+8. Search BST.
+9. Insert BST.
+10. Delete BST node.
+11. Check balanced tree.
+12. Lowest common ancestor.
+13. Serialize and deserialize a binary tree.
+
+10-Graphs
+---------
+1. Represent graph using adjacency matrix.
+2. Represent graph using adjacency list.
+3. BFS.
+4. DFS.
+5. Detect cycle.
+6. Find connected components.
+7. Find shortest path.
+8. Topological sort.
+9. Dijkstra.
+10. Number of islands.
+
+11-Heaps
+--------
+1. Create min heap.
+2. Create max heap.
+3. Insert element.
+4. Delete element.
+5. Heapify an array.
+6. Heap sort.
+7. Find K largest elements.
+8. Find K smallest elements.
+9. Find Kth largest.
+10. Merge K sorted arrays.
+
+12-Dynamic Programming
+---------------------
+1. Fibonacci using DP.
+2. Climbing stairs.
+3. House robber.
+4. Coin change.
+5. 0/1 Knapsack.
+6. Longest Common Subsequence.
+7. Longest Increasing Subsequence.
+8. Minimum path sum.
+9. Partition equal subset sum.
+10. Edit distance.
+
+
+10 - PROBLEM SOLVING
+====================
+
+01-Easy - Target 50 Problems
+----------------------------
+Practice:
+1. Reverse number
+2. Palindrome
+3. Prime
+4. Fibonacci
+5. Factorial
+6. Armstrong
+7. Two Sum
+8. Maximum array
+9. Reverse String
+10. Anagram
+11. Frequency count
+12. Remove duplicates
+13. Missing number
+14. Merge arrays
+15. Binary search
+
+02-Medium - Target 75 Problems
+------------------------------
+1. Kadane's Algorithm
+2. Sliding Window
+3. Two Pointer
+4. Merge Intervals
+5. Longest Substring
+6. Group Anagrams
+7. Linked List Cycle
+8. Tree Traversals
+9. Number of Islands
+10. Top K Frequent Elements
+11. Coin Change
+12. Longest Increasing Subsequence
+
+03-Hard - Target 30+ Problems
+-----------------------------
+1. Trapping Rain Water
+2. N-Queens
+3. Word Ladder
+4. Median of Two Sorted Arrays
+5. Serialize/Deserialize Binary Tree
+6. Regular Expression Matching
+7. Edit Distance
+8. Minimum Window Substring
+9. Hard Graph Problems
+10. Advanced Dynamic Programming
+
+
+11 - PROJECTS
+=============
+
+01-Console Projects
+-------------------
+1. Calculator
+2. Number Guessing Game
+3. ATM
+4. Student Management System
+5. Employee Management System
+6. Bank Management System
+7. Library Management System
+8. Quiz Application
+9. Contact Management System
+10. Expense Tracker
+
+02-Core Java Projects
+---------------------
+1. Banking System
+2. Inventory Management System
+3. Hotel Management System
+4. E-Commerce Console Application
+5. Hospital Management System
+6. Employee Payroll System
+7. Ticket Booking System
+
+Each project should use:
+OOP + Collections + Exception Handling + File Handling + Generics
+
+
+12 - SQL
+========
+
+01-SQL Basics
+-------------
+1. Create a database.
+2. Create tables.
+3. Insert records.
+4. Update records.
+5. Delete records.
+6. Add primary key.
+7. Add foreign key.
+8. Add constraints.
+
+02-SQL Queries
+--------------
+1. Find employees earning more than 50,000.
+2. Find highest salary.
+3. Find second-highest salary.
+4. Find employees from Pune.
+5. Count employees.
+6. Group employees by department.
+7. Find average salary.
+8. Find duplicate records.
+9. Find employees whose name starts with A.
+10. Find top 5 salaries.
+
+03-Joins
+--------
+Create Employee and Department tables.
+
+1. INNER JOIN
+2. LEFT JOIN
+3. RIGHT JOIN
+4. FULL JOIN
+5. SELF JOIN
+6. Find employees without departments.
+7. Find departments without employees.
+8. Find highest salary per department.
+
+04-Subqueries
+-------------
+1. Find employees earning more than average salary.
+2. Find second-highest salary.
+3. Find employees with maximum salary.
+4. Find departments with more than 5 employees.
+5. Find employees whose salary exceeds their department average.
+
+05-Indexes
+----------
+1. Create an index.
+2. Create a composite index.
+3. Understand when indexes help.
+4. Test query performance.
+5. Explain why too many indexes are bad.
+
+06-Database Design
+------------------
+Design databases for:
+1. E-Commerce
+2. Banking
+3. Hospital
+4. Library
+5. Food Delivery
+6. Social Media
+7. Employee Management
+
+
+13 - SPRING BOOT
+================
+
+01-Spring Core
+--------------
+1. What is IoC?
+2. What is Dependency Injection?
+3. Create a Bean.
+4. Use @Component.
+5. Use @Service.
+6. Use @Repository.
+7. Use constructor injection.
+8. Understand Bean lifecycle.
+
+02-Spring Boot
+--------------
+1. Build Hello World API.
+2. Build Student API.
+3. Build Employee API.
+4. Build Product API.
+5. Build CRUD API.
+6. Connect Spring Boot with MySQL.
+7. Add validation.
+8. Add exception handling.
+
+03-REST API
+-----------
+Create:
+POST   /employees
+GET    /employees
+GET    /employees/{id}
+PUT    /employees/{id}
+DELETE /employees/{id}
+
+Then add:
+1. Request DTO
+2. Response DTO
+3. Validation
+4. Global exception handling
+5. Pagination
+6. Sorting
+7. Searching
+
+04-Spring Data JPA
+------------------
+1. Create Entity.
+2. Create Repository.
+3. Create Service.
+4. Create Controller.
+5. CRUD using JPA.
+6. One-to-One relationship.
+7. One-to-Many relationship.
+8. Many-to-Many relationship.
+9. JPQL queries.
+10. Native queries.
+11. Pagination.
+12. Sorting.
+
+05-Spring Security
+------------------
+1. Secure an endpoint.
+2. Create login.
+3. Create registration.
+4. Password hashing.
+5. Role-based authorization.
+6. JWT authentication.
+7. Protect admin endpoints.
+8. Build a secure Employee Management API.
+
+06-Microservices
+----------------
+1. Create two Spring Boot services.
+2. Service-to-service communication.
+3. REST communication.
+4. Service discovery.
+5. API Gateway.
+6. Centralized configuration.
+7. Fault tolerance.
+8. Distributed logging.
+9. Build an E-Commerce microservices project.
+
+
+14 - INTERVIEW PREPARATION
+==========================
+
+For every topic practice:
+A. Explain the concept.
+B. Predict the output.
+C. Implement it.
+
+01-Core Java
+------------
+1. JVM
+2. JDK/JRE
+3. Data types
+4. String
+5. StringBuilder
+6. StringBuffer
+7. Memory
+8. Garbage Collection
+9. == vs equals()
+10. final
+11. static
+12. Wrapper classes
+
+02-OOP
+------
+1. Encapsulation
+2. Inheritance
+3. Polymorphism
+4. Abstraction
+5. Interface
+6. Composition vs inheritance
+7. Overloading vs overriding
+
+03-Collections
+--------------
+1. ArrayList vs LinkedList
+2. HashMap internal working
+3. HashSet internal working
+4. HashMap vs Hashtable
+5. Comparable vs Comparator
+6. Fail-fast vs fail-safe
+
+04-Multithreading
+-----------------
+1. Thread vs Runnable
+2. synchronized
+3. volatile
+4. Race condition
+5. Deadlock
+6. ExecutorService
+7. Callable vs Runnable
+
+05-Java 8
+---------
+1. Lambda
+2. Functional Interface
+3. Stream
+4. map vs flatMap
+5. filter
+6. reduce
+7. Optional
+
+06-DSA
+------
+For every problem explain:
+Brute Force -> Better -> Optimal -> Time Complexity -> Space Complexity
+
+07-SQL
+------
+For every query:
+Query -> Explain -> Optimize
+
+08-Spring Boot
+--------------
+Explain:
+Controller -> Service -> Repository -> Database
+
+
+MASTER PRACTICE RULE
+====================
+
+For every topic:
+
+1. Learn the topic.
+2. Make your own notes.
+3. Solve Level 1.
+4. Solve Level 2.
+5. Solve Level 3.
+6. Solve interview questions.
+7. Build a mini project.
+8. Revise without notes.
+
+Recommended target per topic:
+- Level 1: 10 questions
+- Level 2: 10 questions
+- Level 3: 5 questions
+- Interview: 5 questions
+- Mini implementation: 1
+
+For DSA problems always write:
+1. Brute Force Approach
+2. Better Approach
+3. Optimal Approach
+4. Time Complexity
+5. Space Complexity
+6. Java Code
+7. Test Cases

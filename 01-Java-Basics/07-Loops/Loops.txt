@@ -1,0 +1,956 @@
+# LOOPS IN JAVA - COMPLETE BEGINNER TO ADVANCED GUIDE
+=====================================================================
+
+TABLE OF CONTENTS:
+1. What Are Loops and Why Use Them
+2. Types of Loops in Java
+3. The FOR Loop
+4. The WHILE Loop
+5. The DO-WHILE Loop
+6. Enhanced FOR Loop (For-Each)
+7. Nested Loops
+8. Loop Control Statements (break, continue, return)
+9. Real-World Examples
+10. Common Mistakes
+11. Practice Questions
+12. Interview Questions
+13. Coding Challenge
+14. Summary Cheat Sheet
+
+=====================================================================
+1. WHAT ARE LOOPS AND WHY USE THEM?
+=====================================================================
+
+WHAT IS A LOOP?
+---------------
+A loop is a programming structure that repeats a block of code multiple 
+times based on a condition. Instead of writing the same code over and 
+over, you write it once and tell the computer to execute it repeatedly 
+until a specific condition is met.
+
+WHY USE LOOPS?
+--------------
+✓ Save time - Write less code
+✓ Reduce errors - Less typing = fewer mistakes
+✓ Handle repetitive tasks - Process lists, arrays, user inputs
+✓ Automate boring work - Let the computer do repetitive work
+✓ Process large data - Handle thousands of records easily
+
+REAL-LIFE ANALOGY
+-----------------
+Imagine you're a teacher checking 100 exam papers. Instead of writing 
+"check paper 1", "check paper 2"... 100 times, you say "check each 
+paper until you've checked all 100." That's exactly what a loop does!
+
+=====================================================================
+2. TYPES OF LOOPS IN JAVA
+=====================================================================
+
+Java has 4 types of loops:
+1. for loop         - When you know how many times to repeat
+2. while loop       - When you don't know how many times
+3. do-while loop    - When you need at least one execution
+4. Enhanced for loop - For arrays and collections
+
+=====================================================================
+3. THE FOR LOOP
+=====================================================================
+
+SYNTAX:
+-------
+for (initialization; condition; update) {
+    // code to repeat
+}
+
+HOW IT WORKS (Step by Step):
+---------------------------
+Step 1: Initialization runs ONCE at the start
+Step 2: Condition is checked before each iteration
+Step 3: If condition is TRUE → execute the code
+Step 4: Update runs after each iteration
+Step 5: Go back to Step 2 until condition becomes FALSE
+
+BASIC EXAMPLE:
+--------------
+// Print numbers 1 to 5
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Number: " + i);
+}
+
+OUTPUT:
+Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5
+
+BREAKING IT DOWN:
+----------------
+int i = 1      → Start counting from 1
+i <= 5         → Keep going while i is less than or equal to 5
+i++            → Increase i by 1 each time (i++ means i = i + 1)
+
+MORE EXAMPLES:
+--------------
+// Count down from 10 to 1
+for (int i = 10; i >= 1; i--) {
+    System.out.println("Countdown: " + i);
+}
+
+// Print even numbers from 2 to 20
+for (int i = 2; i <= 20; i = i + 2) {
+    System.out.println("Even number: " + i);
+}
+
+// Sum of numbers from 1 to 100
+int sum = 0;
+for (int i = 1; i <= 100; i++) {
+    sum = sum + i;  // or sum += i
+}
+System.out.println("Sum of 1 to 100: " + sum);  // 5050
+
+=====================================================================
+4. THE WHILE LOOP
+=====================================================================
+
+SYNTAX:
+-------
+while (condition) {
+    // code to repeat
+}
+
+HOW IT WORKS:
+------------
+Step 1: Check the condition
+Step 2: If condition is TRUE → execute the code
+Step 3: Go back to Step 1
+Step 4: Stop when condition becomes FALSE
+
+BASIC EXAMPLE:
+--------------
+int i = 1;
+while (i <= 5) {
+    System.out.println("Number: " + i);
+    i++; // DON'T FORGET TO UPDATE!
+}
+
+WHEN TO USE WHILE LOOP?
+-----------------------
+✓ When you don't know how many times you need to loop
+✓ When the condition depends on user input
+✓ When looping until a specific event occurs
+✓ When reading data from files until end-of-file
+
+REAL EXAMPLE - Validating User Input:
+------------------------------------
+import java.util.Scanner;
+
+Scanner scanner = new Scanner(System.in);
+int number = -1;
+
+while (number < 0) {
+    System.out.print("Enter a positive number: ");
+    number = scanner.nextInt();
+    if (number < 0) {
+        System.out.println("Please enter a positive number!");
+    }
+}
+System.out.println("You entered: " + number);
+
+=====================================================================
+5. THE DO-WHILE LOOP
+=====================================================================
+
+SYNTAX:
+-------
+do {
+    // code to repeat
+} while (condition);
+
+KEY DIFFERENCE:
+--------------
+The do-while loop ALWAYS runs at least once because it checks the 
+condition AFTER the code runs (not before like while loop).
+
+BASIC EXAMPLE:
+--------------
+int i = 10;
+do {
+    System.out.println("Number: " + i);
+    i++;
+} while (i <= 5);
+
+OUTPUT:
+Number: 10
+(Even though 10 is not <= 5, the code runs once!)
+
+WHEN TO USE DO-WHILE?
+--------------------
+✓ When the code MUST run at least once
+✓ Menu-driven programs
+✓ Asking for user input until valid
+✓ Game loops where the game runs at least once
+
+REAL EXAMPLE - ATM PIN Entry:
+-----------------------------
+int attempts = 0;
+int correctPin = 1234;
+int enteredPin;
+
+do {
+    System.out.print("Enter your PIN (attempt " + (attempts + 1) + "): ");
+    // In real code, you'd get input from Scanner
+    // For demonstration, we'll simulate
+    System.out.println("Simulating PIN entry...");
+    attempts++;
+    
+    if (attempts == 2) { // Just for demonstration
+        System.out.println("PIN accepted!");
+        break;
+    }
+} while (attempts < 3);
+
+=====================================================================
+6. ENHANCED FOR LOOP (FOR-EACH)
+=====================================================================
+
+SYNTAX:
+-------
+for (dataType variable : arrayOrCollection) {
+    // code to repeat
+}
+
+HOW IT WORKS:
+------------
+The for-each loop automatically goes through each element in the array
+or collection. You don't need to manage indexes or counters.
+
+BASIC EXAMPLE:
+--------------
+int[] numbers = {10, 20, 30, 40, 50};
+for (int num : numbers) {
+    System.out.println("Number: " + num);
+}
+
+OUTPUT:
+Number: 10
+Number: 20
+Number: 30
+Number: 40
+Number: 50
+
+WHEN TO USE FOR-EACH?
+---------------------
+✓ When processing ALL elements of an array or collection
+✓ When you don't need the index number
+✓ When you want cleaner, more readable code
+✓ When working with collections (ArrayList, etc.)
+
+WHEN NOT TO USE FOR-EACH?
+-------------------------
+✗ When you need to modify the array elements
+✗ When you need the index for calculations
+✗ When you need to skip or break early (can but messy)
+
+STRING EXAMPLE:
+--------------
+String[] fruits = {"Apple", "Banana", "Orange", "Mango"};
+for (String fruit : fruits) {
+    System.out.println("I like " + fruit);
+}
+
+=====================================================================
+7. NESTED LOOPS
+=====================================================================
+
+WHAT ARE NESTED LOOPS?
+---------------------
+A loop inside another loop. The inner loop completes all its iterations
+for each single iteration of the outer loop.
+
+SYNTAX:
+-------
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        System.out.println("i=" + i + ", j=" + j);
+    }
+}
+
+HOW IT WORKS:
+------------
+i=1 → inner loop runs j=1,2,3
+i=2 → inner loop runs j=1,2,3
+i=3 → inner loop runs j=1,2,3
+Total iterations: 3 × 3 = 9
+
+REAL EXAMPLE - Multiplication Table:
+------------------------------------
+// Print multiplication table for 1 to 5
+for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= 5; j++) {
+        System.out.print(i * j + "\t");
+    }
+    System.out.println(); // New line after each row
+}
+
+OUTPUT:
+1    2    3    4    5
+2    4    6    8    10
+3    6    9    12   15
+4    8    12   16   20
+5    10   15   20   25
+
+REAL EXAMPLE - Pattern Printing:
+--------------------------------
+// Print a triangle pattern
+for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= i; j++) {
+        System.out.print("* ");
+    }
+    System.out.println();
+}
+
+OUTPUT:
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+=====================================================================
+8. LOOP CONTROL STATEMENTS
+=====================================================================
+
+BREAK STATEMENT
+---------------
+Exits the loop immediately, regardless of condition.
+
+EXAMPLE:
+--------
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break; // Exit when i equals 5
+    }
+    System.out.println("i: " + i);
+}
+
+OUTPUT:
+i: 1
+i: 2
+i: 3
+i: 4
+
+CONTINUE STATEMENT
+------------------
+Skips the rest of the current iteration and goes to the next one.
+
+EXAMPLE:
+--------
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // Skip printing 3
+    }
+    System.out.println("i: " + i);
+}
+
+OUTPUT:
+i: 1
+i: 2
+i: 4
+i: 5
+
+RETURN STATEMENT
+----------------
+Exits the entire method (not just the loop).
+
+EXAMPLE:
+--------
+public void findNumber(int[] numbers, int target) {
+    for (int num : numbers) {
+        if (num == target) {
+            System.out.println("Found: " + num);
+            return; // Exit the entire method
+        }
+    }
+    System.out.println("Not found");
+}
+
+=====================================================================
+9. REAL-WORLD EXAMPLES
+=====================================================================
+
+EXAMPLE 1: Shopping Cart Total
+------------------------------
+// Calculate total price of items in shopping cart
+double[] prices = {19.99, 5.50, 3.75, 12.00, 8.99};
+double total = 0;
+
+for (double price : prices) {
+    total = total + price;
+}
+System.out.println("Total: $" + total);
+System.out.println("Number of items: " + prices.length);
+
+EXAMPLE 2: Employee Salary Processing
+-------------------------------------
+// Process monthly salaries for employees
+String[] employeeNames = {"John", "Sarah", "Mike", "Emma", "James"};
+double[] annualSalaries = {50000, 60000, 55000, 65000, 48000};
+
+for (int i = 0; i < employeeNames.length; i++) {
+    double monthlySalary = annualSalaries[i] / 12;
+    double weeklySalary = annualSalaries[i] / 52;
+    System.out.println(employeeNames[i] + ":");
+    System.out.println("  Monthly: $" + String.format("%.2f", monthlySalary));
+    System.out.println("  Weekly: $" + String.format("%.2f", weeklySalary));
+}
+
+EXAMPLE 3: Grade Calculator
+--------------------------
+int[] studentGrades = {85, 92, 78, 95, 88, 91, 76, 89, 94, 82};
+int sum = 0;
+int highest = studentGrades[0];
+int lowest = studentGrades[0];
+
+for (int grade : studentGrades) {
+    sum += grade;
+    if (grade > highest) highest = grade;
+    if (grade < lowest) lowest = grade;
+}
+
+double average = (double) sum / studentGrades.length;
+System.out.println("Average: " + average);
+System.out.println("Highest: " + highest);
+System.out.println("Lowest: " + lowest);
+
+EXAMPLE 4: Bank Transaction Processing
+--------------------------------------
+// Process daily transactions
+double[] transactions = {100.50, -50.25, 200.00, -30.00, -75.50, 150.00};
+double balance = 1000.00;
+int depositCount = 0;
+int withdrawalCount = 0;
+
+for (double transaction : transactions) {
+    balance += transaction;
+    if (transaction > 0) {
+        depositCount++;
+    } else {
+        withdrawalCount++;
+    }
+    System.out.println("Transaction: $" + transaction + " | New balance: $" + balance);
+}
+System.out.println("Final balance: $" + balance);
+System.out.println("Deposits: " + depositCount);
+System.out.println("Withdrawals: " + withdrawalCount);
+
+EXAMPLE 5: Search for an Item in a List
+---------------------------------------
+String[] productList = {"Laptop", "Phone", "Tablet", "Headphones", "Monitor"};
+String searchProduct = "Tablet";
+boolean found = false;
+
+for (int i = 0; i < productList.length; i++) {
+    if (productList[i].equals(searchProduct)) {
+        System.out.println("Found " + searchProduct + " at position " + i);
+        found = true;
+        break; // Exit the loop once found
+    }
+}
+
+if (!found) {
+    System.out.println(searchProduct + " not found in the list.");
+}
+
+=====================================================================
+10. COMMON MISTAKES
+=====================================================================
+
+MISTAKE 1: INFINITE LOOP
+------------------------
+// WRONG - This will run forever!
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    // Forgot to increment i!
+}
+
+// FIX - Update the variable
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++; // ADD THIS
+}
+
+MISTAKE 2: OFF-BY-ONE ERROR
+---------------------------
+// WRONG - Prints 1-4, missing 5
+for (int i = 1; i < 5; i++) {
+    System.out.println(i);
+}
+
+// CORRECT - Prints 1-5
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+
+MISTAKE 3: CHANGING LOOP VARIABLE INSIDE
+----------------------------------------
+// WRONG - Confusing and hard to debug
+for (int i = 0; i < 10; i++) {
+    i = i + 5; // DON'T DO THIS!
+}
+
+// CORRECT - Let the loop control the variable
+for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+
+MISTAKE 4: USING == FOR STRING COMPARISON
+------------------------------------------
+// WRONG - Doesn't compare string content
+String str = "Hello";
+while (str == "Hello") { // Wrong!
+    // ...
+}
+
+// CORRECT - Use .equals() method
+while (str.equals("Hello")) {
+    // ...
+}
+
+MISTAKE 5: FORGOTTEN BRACES
+---------------------------
+// WRONG - Only the first statement is in the loop
+for (int i = 1; i <= 3; i++)
+    System.out.println("First");
+    System.out.println("Second"); // Not in loop!
+
+// CORRECT - Use braces
+for (int i = 1; i <= 3; i++) {
+    System.out.println("First");
+    System.out.println("Second");
+}
+
+MISTAKE 6: MODIFYING COLLECTION WHILE ITERATING
+-----------------------------------------------
+// WRONG - ConcurrentModificationException
+ArrayList<String> list = new ArrayList<>();
+list.add("A");
+list.add("B");
+list.add("C");
+
+for (String item : list) {
+    if (item.equals("B")) {
+        list.remove(item); // DON'T DO THIS!
+    }
+}
+
+// CORRECT - Use iterator or collect changes
+// Option 1: Use a separate list for removal
+ArrayList<String> toRemove = new ArrayList<>();
+for (String item : list) {
+    if (item.equals("B")) {
+        toRemove.add(item);
+    }
+}
+list.removeAll(toRemove);
+
+MISTAKE 7: UNNECESSARY COMPLEXITY
+---------------------------------
+// BAD - Overly complex
+for (int i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+        // Do something
+    }
+}
+
+// GOOD - Simple and clear
+for (int value : array) {
+    if (value > 0) {
+        // Do something
+    }
+}
+
+=====================================================================
+11. PRACTICE QUESTIONS
+=====================================================================
+
+QUESTION 1: Print Even Numbers
+-----------------------------
+Write a program that prints all even numbers from 1 to 50 using a for loop.
+
+SOLUTION:
+---------
+for (int i = 2; i <= 50; i += 2) {
+    System.out.println(i);
+}
+
+QUESTION 2: Sum of Odd Numbers
+-----------------------------
+Write a program that calculates the sum of all odd numbers from 1 to 100.
+
+SOLUTION:
+---------
+int sum = 0;
+for (int i = 1; i <= 100; i += 2) {
+    sum += i;
+}
+System.out.println("Sum of odd numbers: " + sum);
+
+QUESTION 3: Reverse a String
+----------------------------
+Write a program that reverses a string using a loop.
+Example: "Hello" → "olleH"
+
+SOLUTION:
+---------
+String original = "Hello";
+String reversed = "";
+
+for (int i = original.length() - 1; i >= 0; i--) {
+    reversed += original.charAt(i);
+}
+System.out.println("Original: " + original);
+System.out.println("Reversed: " + reversed);
+
+QUESTION 4: Find Largest Number
+-------------------------------
+Write a program that finds the largest number in an array.
+
+SOLUTION:
+---------
+int[] numbers = {23, 45, 12, 67, 34, 89, 56};
+int largest = numbers[0];
+
+for (int num : numbers) {
+    if (num > largest) {
+        largest = num;
+    }
+}
+System.out.println("Largest number: " + largest);
+
+QUESTION 5: Count Vowels
+------------------------
+Write a program that counts the number of vowels in a string.
+
+SOLUTION:
+---------
+String text = "Hello World";
+int vowelCount = 0;
+text = text.toLowerCase();
+
+for (int i = 0; i < text.length(); i++) {
+    char ch = text.charAt(i);
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+        vowelCount++;
+    }
+}
+System.out.println("Number of vowels: " + vowelCount);
+
+=====================================================================
+12. INTERVIEW QUESTIONS
+=====================================================================
+
+Q1: What's the difference between while and do-while loops?
+-----------------------------------------------------------
+ANSWER: 
+The while loop checks the condition before executing the code, so 
+it might not execute at all. The do-while loop checks the condition 
+after executing the code, so it ALWAYS executes at least once.
+
+Q2: When would you use a for loop vs a while loop?
+-------------------------------------------------
+ANSWER:
+- Use for loop when you know how many times to iterate (count-controlled)
+- Use while loop when you don't know how many times (condition-controlled)
+- Example: for loop for array iteration, while loop for user input validation
+
+Q3: What is an infinite loop? How do you prevent it?
+----------------------------------------------------
+ANSWER:
+An infinite loop is a loop that never stops because the condition never 
+becomes false. Prevent by:
+1. Always updating the loop variable
+2. Making sure the condition can become false
+3. Including a break statement when needed
+4. Testing your loops with different inputs
+
+Q4: Can you use break and continue in all loop types?
+-----------------------------------------------------
+ANSWER:
+Yes, break and continue work in for, while, and do-while loops.
+- break: Exits the loop immediately
+- continue: Skips the current iteration and goes to the next
+
+Q5: What's the difference between break and return?
+---------------------------------------------------
+ANSWER:
+- break: Only exits the current loop (continues with code after loop)
+- return: Exits the entire method (goes back to the caller)
+
+Q6: What is a nested loop? Give an example.
+-------------------------------------------
+ANSWER:
+A nested loop is a loop inside another loop. For each iteration of the 
+outer loop, the inner loop completes all its iterations.
+Example: Multiplication table or pattern printing.
+
+Q7: How do you iterate over an ArrayList?
+----------------------------------------
+ANSWER:
+// Method 1: Enhanced for loop (for-each)
+for (String item : list) {
+    System.out.println(item);
+}
+
+// Method 2: Traditional for loop
+for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
+}
+
+// Method 3: Iterator
+Iterator<String> it = list.iterator();
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
+
+Q8: What's the time complexity of nested loops?
+-----------------------------------------------
+ANSWER:
+A double nested loop has O(n²) time complexity. If both loops run n times,
+the total iterations are n × n = n².
+
+Q9: Can you use a for-each loop to modify array elements?
+---------------------------------------------------------
+ANSWER:
+No, for-each loop gives you a copy of the element, not the actual element.
+Use a regular for loop with index to modify array elements.
+
+Q10: How do you loop backwards through an array?
+------------------------------------------------
+ANSWER:
+for (int i = array.length - 1; i >= 0; i--) {
+    System.out.println(array[i]);
+}
+
+=====================================================================
+13. CODING CHALLENGE
+=====================================================================
+
+CHALLENGE: Student Grade Management System
+------------------------------------------
+
+Problem Statement:
+Create a program that manages student grades with the following features:
+
+1. Accept grades for 10 students (use an array)
+2. Calculate and display:
+   - Average grade
+   - Highest grade
+   - Lowest grade
+   - Number of students who passed (grade >= 60)
+   - Number of students who failed (grade < 60)
+   - Letter grade for each student (A, B, C, D, F)
+
+3. Allow the user to search for a grade and find how many students 
+   got that grade
+
+SOLUTION:
+----------
+import java.util.Scanner;
+
+public class GradeManager {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] grades = new int[10];
+        int sum = 0;
+        int highest, lowest;
+        int passed = 0;
+        int failed = 0;
+        
+        // Input grades
+        System.out.println("Enter grades for 10 students (0-100):");
+        for (int i = 0; i < grades.length; i++) {
+            System.out.print("Student " + (i + 1) + ": ");
+            grades[i] = scanner.nextInt();
+            
+            // Validate input
+            while (grades[i] < 0 || grades[i] > 100) {
+                System.out.print("Invalid grade! Enter 0-100: ");
+                grades[i] = scanner.nextInt();
+            }
+            
+            sum += grades[i];
+        }
+        
+        // Calculate statistics
+        highest = grades[0];
+        lowest = grades[0];
+        
+        for (int grade : grades) {
+            if (grade > highest) highest = grade;
+            if (grade < lowest) lowest = grade;
+            if (grade >= 60) passed++;
+            else failed++;
+        }
+        
+        double average = (double) sum / grades.length;
+        
+        // Display results
+        System.out.println("\n========== GRADE REPORT ==========");
+        System.out.println("Average grade: " + String.format("%.2f", average));
+        System.out.println("Highest grade: " + highest);
+        System.out.println("Lowest grade: " + lowest);
+        System.out.println("Students passed: " + passed);
+        System.out.println("Students failed: " + failed);
+        
+        System.out.println("\n--- Individual Results ---");
+        for (int i = 0; i < grades.length; i++) {
+            String letterGrade;
+            if (grades[i] >= 90) letterGrade = "A";
+            else if (grades[i] >= 80) letterGrade = "B";
+            else if (grades[i] >= 70) letterGrade = "C";
+            else if (grades[i] >= 60) letterGrade = "D";
+            else letterGrade = "F";
+            
+            System.out.println("Student " + (i + 1) + ": " + grades[i] + 
+                             " (" + letterGrade + ")");
+        }
+        
+        // Search feature
+        System.out.print("\nEnter a grade to search for: ");
+        int searchGrade = scanner.nextInt();
+        int count = 0;
+        
+        for (int grade : grades) {
+            if (grade == searchGrade) {
+                count++;
+            }
+        }
+        
+        System.out.println("Found " + count + " student(s) with grade " + searchGrade);
+        
+        scanner.close();
+    }
+}
+
+SAMPLE OUTPUT:
+Enter grades for 10 students (0-100):
+Student 1: 85
+Student 2: 92
+Student 3: 78
+Student 4: 45
+Student 5: 67
+Student 6: 88
+Student 7: 56
+Student 8: 94
+Student 9: 73
+Student 10: 61
+
+========== GRADE REPORT ==========
+Average grade: 73.90
+Highest grade: 94
+Lowest grade: 45
+Students passed: 7
+Students failed: 3
+
+--- Individual Results ---
+Student 1: 85 (B)
+Student 2: 92 (A)
+Student 3: 78 (C)
+Student 4: 45 (F)
+Student 5: 67 (D)
+Student 6: 88 (B)
+Student 7: 56 (F)
+Student 8: 94 (A)
+Student 9: 73 (C)
+Student 10: 61 (D)
+
+Enter a grade to search for: 78
+Found 1 student(s) with grade 78
+
+=====================================================================
+14. SUMMARY CHEAT SHEET
+=====================================================================
+
+QUICK REFERENCE:
+----------------
+FOR LOOP:
+for (int i = 0; i < 10; i++) { }
+  ✓ Use when you know the count
+  ✓ Best for arrays by index
+
+WHILE LOOP:
+while (condition) { }
+  ✓ Use when count is unknown
+  ✓ Best for user input validation
+
+DO-WHILE LOOP:
+do { } while (condition);
+  ✓ Use when must run at least once
+  ✓ Best for menus and games
+
+FOR-EACH LOOP:
+for (type var : array) { }
+  ✓ Use for processing all elements
+  ✓ Simplest and cleanest
+
+BREAK:
+  ✓ Exit the loop immediately
+
+CONTINUE:
+  ✓ Skip to next iteration
+
+NESTED LOOPS:
+  ✓ Loop inside a loop
+  ✓ Used for 2D data and patterns
+
+COMMON PATTERNS:
+----------------
+// Sum of array
+for (int num : array) { sum += num; }
+
+// Find max
+for (int num : array) { if (num > max) max = num; }
+
+// Find element
+for (int num : array) { if (num == target) found = true; }
+
+// Count occurrence
+for (int num : array) { if (num == target) count++; }
+
+// Print pattern
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= i; j++) {
+        System.out.print("* ");
+    }
+    System.out.println();
+}
+
+// While with user input
+Scanner sc = new Scanner(System.in);
+int input = 0;
+while (input != -1) {
+    input = sc.nextInt();
+    // Process input
+}
+
+PERFORMANCE TIPS:
+-----------------
+1. Use for-each when possible - it's cleaner
+2. Minimize operations inside the loop
+3. Use appropriate loop type for the situation
+4. Avoid modifying loop variables inside the loop
+5. Be careful with nested loops - they can be slow
+6. Use StringBuilder for string concatenation in loops
+
+=====================================================================
+END OF GUIDE
+=====================================================================
+
+Remember: Loops are one of the most important concepts in programming.
+Practice regularly by writing small programs that use loops in different
+ways. Start with simple examples and gradually move to more complex ones.
+
+Good luck with your Java journey! 🚀

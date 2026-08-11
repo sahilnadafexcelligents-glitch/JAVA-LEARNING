@@ -1,0 +1,140 @@
+Data Types in Java
+==================
+
+1. What is a data type?
+A data type tells Java what kind of value a variable can store.
+It also helps Java decide how much memory to use.
+
+Example:
+int age = 20;
+Here, int means the variable age can store whole numbers.
+
+Why are data types used?
+- To store data properly
+- To save memory
+- To prevent errors
+- To help Java understand what operations are allowed
+
+2. Syntax
+dataType variableName = value;
+
+Example:
+int age = 20;
+double price = 19.99;
+char grade = 'A';
+boolean isStudent = true;
+String name = "Alice";
+
+3. Types of data types in Java
+A. Primitive data types
+These are basic built-in types.
+
+byte -> small whole numbers
+short -> small whole numbers
+int -> whole numbers
+long -> large whole numbers
+float -> decimal numbers with less precision
+double -> decimal numbers with more precision
+char -> single character
+boolean -> true or false
+
+B. Non-primitive data types
+These are created from classes or objects.
+Examples:
+String
+Array
+Class
+Interface
+
+4. Simple examples
+Example 1: int
+int age = 25;
+System.out.println(age);
+
+Example 2: double
+double price = 99.99;
+System.out.println(price);
+
+Example 3: char
+char grade = 'A';
+System.out.println(grade);
+
+Example 4: boolean
+boolean isJavaFun = true;
+System.out.println(isJavaFun);
+
+Example 5: String
+String name = "Rahul";
+System.out.println(name);
+
+5. Real-world example
+Suppose you are building a student record system.
+You need to store:
+- age -> int
+- marks -> double
+- grade -> char
+- pass/fail -> boolean
+- name -> String
+
+Example:
+int age = 18;
+double marks = 87.5;
+char grade = 'A';
+boolean isPassed = true;
+String name = "Neha";
+
+6. Important concepts
+Declaration:
+int age;
+
+Initialization:
+age = 20;
+
+Declaration and initialization together:
+int age = 20;
+
+7. Common mistakes
+- Using a decimal value in int
+int x = 10.5; // wrong
+
+- Using text in int
+int age = "twenty"; // wrong
+
+- Using a variable name that starts with a number
+int 2age = 10; // invalid
+
+- Confusing char and String
+char c = 'A'; // correct
+String s = "A"; // also correct, but different type
+
+- Forgetting to use the correct data type
+double price = 100; // valid, but not always ideal
+
+8. Practice questions
+1. What is a data type in Java?
+2. Which data type would you use to store a person's age?
+3. Which data type would you use to store a decimal number like 45.75?
+4. What is the difference between char and String?
+5. Write a Java statement to declare a boolean variable named isActive and assign true.
+
+9. Interview questions
+1. What is the difference between primitive and non-primitive data types?
+2. Why are data types important in Java?
+3. What is the difference between int and double?
+4. What is the difference between char and String?
+5. What happens if you assign a decimal value to an int variable?
+
+10. Small coding challenge
+Write a Java program that stores:
+- your name in a String
+- your age in an int
+- your height in a double
+- whether you are a student in a boolean
+
+Then print all values.
+
+Example output:
+Name: Asha
+Age: 20
+Height: 5.6
+Student: true

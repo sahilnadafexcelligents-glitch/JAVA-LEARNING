@@ -1,0 +1,134 @@
+JDK - JRE - JVM in Java
+========================
+
+Java has 3 important components:
+
+1. JDK
+2. JRE
+3. JVM
+
+
+1. JDK - Java Development Kit
+-----------------------------
+
+JDK is used to DEVELOP Java programs.
+
+It contains:
+- JRE
+- JVM
+- Java Compiler (javac)
+- Debugging tools
+- Other development tools
+
+Example:
+
+You write:
+Hello.java
+
+JDK compiles it:
+javac Hello.java
+
+It creates:
+Hello.class
+
+
+2. JRE - Java Runtime Environment
+---------------------------------
+
+JRE is used to RUN Java programs.
+
+It contains:
+- JVM
+- Java Libraries
+- Supporting files
+
+JRE does NOT contain the Java compiler.
+
+In simple words:
+
+JRE = Environment needed to RUN Java programs.
+
+
+3. JVM - Java Virtual Machine
+-----------------------------
+
+JVM runs Java bytecode.
+
+Java source code:
+Hello.java
+     ↓
+JDK Compiler (javac)
+     ↓
+Hello.class
+     ↓
+JVM
+     ↓
+Program runs
+
+
+Why is JVM important?
+
+Java follows:
+
+"Write Once, Run Anywhere"
+
+The same .class file can run on:
+- Windows
+- Linux
+- macOS
+
+because each operating system has its own JVM.
+
+
+Simple Relationship
+-------------------
+
+JDK
+ |
+ └── JRE
+      |
+      └── JVM
+
+
+Easy Way to Remember
+--------------------
+
+JDK = Develop
+JRE = Run
+JVM = Execute
+
+
+Real-Life Example
+-----------------
+
+Think of making a car:
+
+JDK = Factory
+      → Used to build the car
+
+JRE = Road + Environment
+      → Needed to use the car
+
+JVM = Engine
+      → Actually runs the car
+
+
+Important Point
+---------------
+
+JDK > JRE > JVM
+
+JDK contains JRE.
+JRE contains JVM.
+
+
+Short Interview Answer
+----------------------
+
+JDK is used to develop Java applications.
+
+JRE provides the environment required to run
+Java applications.
+
+JVM executes Java bytecode and makes Java
+platform independent.

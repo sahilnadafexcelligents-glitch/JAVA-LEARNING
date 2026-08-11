@@ -1,0 +1,160 @@
+Operators in Java
+=================
+
+1. What is an operator?
+An operator is a symbol that performs an operation on values or variables.
+
+Examples:
+- + adds numbers
+- - subtracts numbers
+- * multiplies numbers
+- / divides numbers
+
+2. Why are operators used?
+Operators are used to:
+- perform calculations
+- compare values
+- change values
+- make decisions in programs
+
+3. Types of operators in Java
+A. Arithmetic operators
+Used for math operations.
+
++   addition
+-   subtraction
+*   multiplication
+/   division
+%   modulus (remainder)
+
+Example:
+int a = 10;
+int b = 3;
+System.out.println(a + b); // 13
+System.out.println(a % b); // 1
+
+B. Assignment operators
+Used to assign values.
+
+= assigns a value
++= adds and assigns
+-= subtracts and assigns
+*= multiplies and assigns
+/= divides and assigns
+%= modulus and assigns
+
+Example:
+int x = 5;
+x += 3; // x = x + 3
+System.out.println(x); // 8
+
+C. Comparison operators
+Used to compare values.
+
+== equal to
+!= not equal to
+> greater than
+< less than
+>= greater than or equal to
+<= less than or equal to
+
+Example:
+int a = 10;
+int b = 20;
+System.out.println(a < b); // true
+
+D. Logical operators
+Used to combine conditions.
+
+&& AND
+|| OR
+! NOT
+
+Example:
+boolean a = true;
+boolean b = false;
+System.out.println(a && b); // false
+System.out.println(a || b); // true
+
+E. Increment and decrement operators
+Used to increase or decrease a value by 1.
+
+++ increases by 1
+-- decreases by 1
+
+Example:
+int count = 5;
+count++;
+System.out.println(count); // 6
+
+4. Simple examples
+Example 1: Arithmetic
+int sum = 10 + 5;
+System.out.println(sum);
+
+Example 2: Comparison
+int age = 18;
+System.out.println(age >= 18);
+
+Example 3: Logical
+boolean isStudent = true;
+boolean hasFee = false;
+System.out.println(isStudent && hasFee);
+
+5. Real-world example
+Suppose you are calculating the total price of items in a shop.
+
+int price = 100;
+int quantity = 3;
+int total = price * quantity;
+System.out.println(total);
+
+Here, * is used to calculate the total.
+
+6. Common mistakes
+- Confusing = with ==
+int a = 5;
+if (a == 5) {
+    System.out.println("Yes");
+}
+
+- Using / with integers incorrectly
+int a = 5;
+int b = 2;
+System.out.println(a / b); // 2, not 2.5
+
+- Forgetting operator precedence
+int result = 2 + 3 * 4;
+System.out.println(result); // 14
+
+- Using && and || incorrectly
+boolean x = true;
+boolean y = false;
+System.out.println(x && y); // false
+
+7. Practice questions
+1. What does the + operator do?
+2. What is the difference between = and == ?
+3. Write a Java example using the % operator.
+4. What is the output of 10 < 5?
+5. What does && mean in Java?
+
+8. Interview questions
+1. What are operators in Java?
+2. What is the difference between arithmetic and comparison operators?
+3. What is the difference between = and == ?
+4. What does && and || mean?
+5. What is the purpose of the increment operator ++ ?
+
+9. Small coding challenge
+Write a Java program that:
+- stores two numbers
+- adds them
+- checks if the first number is greater than the second
+- prints both results
+
+Example:
+int a = 8;
+int b = 3;
+System.out.println(a + b);
+System.out.println(a > b);

@@ -1,0 +1,24 @@
+Variables in Java
+=================
+
+- A variable is a named container used to store data.
+- Every variable has a data type, a name, and a value.
+- Example: int age = 20;
+- Variables help make programs flexible and reusable.
+
+Common data types:
+- int -> whole numbers
+- double -> decimal numbers
+- char -> single character
+- boolean -> true/false
+- String -> text
+
+Example:
+int age = 20;
+String name = "Alice";
+
+Important rules:
+- Variable names should be meaningful.
+- They cannot start with a number.
+- They cannot contain spaces.
+- They cannot use Java keywords.

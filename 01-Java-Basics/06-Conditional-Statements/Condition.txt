@@ -1,0 +1,405 @@
+﻿Topic Overview
+
+- What it is:
+  Conditional statements in Java let your program choose different actions based on true/false tests.
+- Why it is important:
+  They make programs decision-aware, so code can react to input, compare values, and follow different flows.
+- Where it is used in real Java development:
+  User input handling, validation, branch logic in applications, configuration checks, business rules, and game logic.
+
+Prerequisites
+
+- Java syntax basics: variables, data types, operators, statements.
+- Understanding boolean values: true and false.
+- Familiarity with simple input/output and running Java programs.
+
+Learning Roadmap
+
+Level 1: Fundamentals
+- Learn if statements and boolean conditions.
+- Understand relational operators like ==, !=, >, <, >=, <=.
+- Practice simple true/false branching.
+
+Level 2: Core Concepts
+- Learn if-else and nested if statements.
+- Learn switch statements and switch expressions.
+- Practice combining conditions with logical operators: &&, ||, !.
+
+Level 3: Intermediate Concepts
+- Learn else-if chains for multiple conditions.
+- Learn switch on strings and enums.
+- Practice condition grouping and boolean expression readability.
+
+Level 4: Advanced Concepts
+- Learn ternary operator for compact decisions.
+- Learn guard clauses and early returns.
+- Understand fall-through in switch and how to avoid it.
+
+Level 5: Real-world usage
+- Use conditionals in validation logic, menu selection, and feature toggles.
+- Combine conditionals with loops and methods.
+- Structure code for readability and maintainability.
+
+Subtopics
+
+- Basic if statement
+- if-else statement
+- else-if chains
+- Nested if statements
+- switch statement
+- switch with strings and enums
+- logical operators: &&, ||, !
+- relational operators
+- ternary operator
+- guard clauses and early return
+- switch fall-through and break
+- conditionals inside loops and methods
+
+For Each Subtopic
+
+1. Basic if statement
+- Simple explanation: executes a block when a condition is true.
+- Syntax:
+  if (condition) {
+      // code
+  }
+- Small Java example:
+  int x = 5;
+  if (x > 0) {
+      System.out.println("x is positive");
+  }
+- Real-world example:
+  Check if a user entered a password before continuing.
+- Common mistakes:
+  forgetting braces, using = instead of ==, testing the wrong condition.
+- Interview points:
+  Describe how if statement controls program flow.
+
+2. if-else statement
+- Simple explanation: chooses between two blocks when a condition is true or false.
+- Syntax:
+  if (condition) {
+      // true block
+  } else {
+      // false block
+  }
+- Small Java example:
+  int age = 18;
+  if (age >= 18) {
+      System.out.println("Adult");
+  } else {
+      System.out.println("Minor");
+  }
+- Real-world example:
+  Determine user access level based on role.
+- Common mistakes:
+  missing else, writing unrelated code after else, wrong condition order.
+- Interview points:
+  Explain the difference between if and if-else.
+
+3. else-if chains
+- Simple explanation: tests multiple conditions in order until one matches.
+- Syntax:
+  if (cond1) {
+      // block1
+  } else if (cond2) {
+      // block2
+  } else {
+      // default block
+  }
+- Small Java example:
+  int score = 85;
+  if (score >= 90) {
+      System.out.println("A grade");
+  } else if (score >= 75) {
+      System.out.println("B grade");
+  } else {
+      System.out.println("C or lower");
+  }
+- Real-world example:
+  Assign shipping cost based on order total.
+- Common mistakes:
+  overlapping ranges, unreachable conditions, no final else when needed.
+- Interview points:
+  Explain how else-if chain stops after first true branch.
+
+4. Nested if statements
+- Simple explanation: one if inside another to test conditions in a hierarchical way.
+- Syntax:
+  if (outer) {
+      if (inner) {
+          // code
+      }
+  }
+- Small Java example:
+  int age = 20;
+  boolean hasID = true;
+  if (age >= 18) {
+      if (hasID) {
+          System.out.println("Entry allowed");
+      }
+  }
+- Real-world example:
+  Validate payment method only after checking user login.
+- Common mistakes:
+  deep nesting, hard-to-read code, missing braces.
+- Interview points:
+  Describe when nested conditionals are useful and when to avoid them.
+
+5. switch statement
+- Simple explanation: selects a branch based on a value and matches cases.
+- Syntax:
+  switch (value) {
+      case constant1:
+          // code
+          break;
+      case constant2:
+          // code
+          break;
+      default:
+          // code
+  }
+- Small Java example:
+  int day = 3;
+  switch (day) {
+      case 1:
+          System.out.println("Monday");
+          break;
+      case 2:
+          System.out.println("Tuesday");
+          break;
+      default:
+          System.out.println("Other day");
+  }
+- Real-world example:
+  Run menu actions based on user choice.
+- Common mistakes:
+  forgetting break, using incompatible types, not handling default.
+- Interview points:
+  Compare switch vs if-else for many discrete values.
+
+6. switch with strings and enums
+- Simple explanation: allows switch cases on string values or enum constants.
+- Syntax:
+  switch (text) {
+      case "start":
+          // code
+          break;
+      default:
+  }
+- Small Java example:
+  String command = "open";
+  switch (command) {
+      case "open":
+          System.out.println("Opening");
+          break;
+      case "close":
+          System.out.println("Closing");
+          break;
+      default:
+          System.out.println("Unknown");
+  }
+- Real-world example:
+  Handle commands in a text-based menu.
+- Common mistakes:
+  case-sensitivity issues, null switch values, not using enums for fixed states.
+- Interview points:
+  Describe benefits of enums in switch statements.
+
+7. logical operators: &&, ||, !
+- Simple explanation: combine multiple boolean expressions or invert a result.
+- Syntax:
+  if (a && b) { }
+  if (a || b) { }
+  if (!a) { }
+- Small Java example:
+  boolean loggedIn = true;
+  boolean hasAccess = false;
+  if (loggedIn && hasAccess) {
+      System.out.println("Can proceed");
+  }
+- Real-world example:
+  Check multiple form fields before submitting.
+- Common mistakes:
+  wrong operator precedence, using | or & when && or || are intended, confusing ! placement.
+- Interview points:
+  Explain short-circuit evaluation and when it matters.
+
+8. relational operators
+- Simple explanation: compare numbers, characters, or values to get true/false.
+- Syntax:
+  x == y, x != y, x > y, x < y, x >= y, x <= y
+- Small Java example:
+  int a = 10;
+  int b = 20;
+  if (a < b) {
+      System.out.println("a is smaller");
+  }
+- Real-world example:
+  Compare product price with budget.
+- Common mistakes:
+  using == for string comparison, reversing > and <, integer division results.
+- Interview points:
+  Describe each relational operator and where == is safe.
+
+9. ternary operator
+- Simple explanation: a compact if-else expression that returns a value.
+- Syntax:
+  result = condition ? value1 : value2;
+- Small Java example:
+  int n = 7;
+  String parity = (n % 2 == 0) ? "even" : "odd";
+- Real-world example:
+  Choose a label or status message in one line.
+- Common mistakes:
+  overusing ternary for complex logic, unreadable nested ternaries.
+- Interview points:
+  Explain when to use ternary and when to prefer if-else.
+
+10. guard clauses and early return
+- Simple explanation: check a condition early and exit before running the rest of the method.
+- Syntax:
+  if (invalid) {
+      return;
+  }
+- Small Java example:
+  void process(int value) {
+      if (value < 0) {
+          return;
+      }
+      System.out.println("Value is " + value);
+  }
+- Real-world example:
+  Validate input at the start of a request handler.
+- Common mistakes:
+  too many early returns, losing readability if scattered.
+- Interview points:
+  Describe how guard clauses simplify nested code.
+
+11. switch fall-through and break
+- Simple explanation: without break, switch continues to the next case.
+- Syntax:
+  switch (value) {
+      case 1:
+          // code
+      case 2:
+          // code
+          break;
+  }
+- Small Java example:
+  int level = 1;
+  switch (level) {
+      case 1:
+      case 2:
+          System.out.println("Beginner or intermediate");
+          break;
+      default:
+          System.out.println("Advanced");
+  }
+- Real-world example:
+  Group multiple menu items with shared behavior.
+- Common mistakes:
+  unintended fall-through and missing break, creating bugs.
+- Interview points:
+  Explain fall-through and intentional case grouping.
+
+12. conditionals inside loops and methods
+- Simple explanation: use decisions repeatedly inside loops and organize logic in methods.
+- Syntax example:
+  for (int i = 0; i < 10; i++) {
+      if (i % 2 == 0) {
+          System.out.println(i);
+      }
+  }
+- Small Java example:
+  for (int i = 1; i <= 5; i++) {
+      if (i % 2 == 0) {
+          System.out.println("Even: " + i);
+      }
+  }
+- Real-world example:
+  Validate each item in a list before adding it to a result.
+- Common mistakes:
+  conditionals that slow loops, mixing logic and iteration too much.
+- Interview points:
+  Describe how loops and conditionals work together.
+
+Practice
+
+Beginner exercises
+- Write an if statement to print whether a number is positive, negative, or zero.
+- Use if-else to check age eligibility for a movie.
+- Compare two numbers and print the larger one.
+
+Intermediate exercises
+- Use else-if to grade scores: A, B, C, D, F.
+- Create a switch statement for weekday names from numbers.
+- Use logical operators to validate username and password rules.
+
+Advanced exercises
+- Build a menu-driven calculator using switch and methods.
+- Use nested if statements to validate date input (day/month/year).
+- Write a method using ternary operators to return a status string.
+
+Mini-projects
+- Create a small console program that asks for user input and responds with different actions using switch.
+- Build a simple login validator that uses conditionals to check username, password, and account status.
+- Develop a grade calculator that processes scores and prints grade categories.
+
+Interview Preparation
+
+Basic interview questions
+- What is an if statement?
+- What is the difference between if and if-else?
+- What is a switch statement?
+
+Intermediate questions
+- When should you use else-if versus switch?
+- How do logical operators &&, ||, and ! work?
+- What is short-circuit evaluation?
+
+Advanced questions
+- What is switch fall-through and how do you handle it?
+- When is the ternary operator useful, and when should you avoid it?
+- How can guard clauses improve code readability?
+
+Coding questions
+- Write an if-else program to determine whether a number is even or odd.
+- Write a switch-based menu to select and print a season by month number.
+- Write a method that returns "valid" or "invalid" using a ternary operator.
+
+Mastery Checklist
+
+- I can write basic if statements.
+- I can use if-else and else-if chains correctly.
+- I understand nested conditionals.
+- I can write switch statements with break and default.
+- I can use switch with strings and enums.
+- I can combine conditions with &&, ||, !.
+- I can compare values using relational operators.
+- I can use the ternary operator for simple decisions.
+- I can write guard clauses and early returns.
+- I know switch fall-through behavior.
+- I can use conditional logic inside loops and methods.
+- I can apply conditionals to practical validation and menu flow.
+
+Next Topic
+
+- Learn "Loops in Java" next.
+- Why: Loops and conditionals work together for repeated decision-making, and loops are the natural next step after learning how to make decisions.
+
+One-Page Roadmap
+
+Conditional Statement in Java
+  1. Basic if statement
+  2. if-else statement
+  3. else-if chains
+  4. Nested if statements
+  5. switch statement
+  6. switch with strings and enums
+  7. Logical operators (&&, ||, !)
+  8. Relational operators
+  9. Ternary operator
+ 10. Guard clauses and early return
+ 11. Switch fall-through and break
+ 12. Conditionals inside loops and methods
