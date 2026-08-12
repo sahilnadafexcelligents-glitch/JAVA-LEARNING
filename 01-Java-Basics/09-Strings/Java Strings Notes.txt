@@ -1,0 +1,254 @@
+============================================================
+          JAVA STRING TUTORIAL (Beginner → Advanced)
+============================================================
+
+1. WHAT IT IS AND WHY IT IS USED
+--------------------------------
+A String in Java is a sequence of characters (letters, numbers, symbols, spaces).
+
+It is an object of the class java.lang.String.
+
+Why we use it:
+- Almost every program needs to work with text (names, messages, passwords, file content, user input, etc.).
+- Java provides a ready-made String class with many useful methods so you don’t have to handle characters one by one.
+- Strings are immutable (cannot be changed after creation). This makes them safe and efficient in many situations.
+
+Key point for beginners:
+String is NOT a primitive type (like int, char, boolean).
+It is a reference type (an object).
+
+------------------------------------------------------------
+2. SYNTAX
+------------------------------------------------------------
+There are two main ways to create a String:
+
+Way 1 – String literal (most common and preferred):
+    String name = "Hello";
+
+Way 2 – Using the new keyword:
+    String name = new String("Hello");
+
+You can also create an empty string:
+    String empty = "";
+    String empty2 = new String();
+
+String is written with capital ‘S’ because it is a class name.
+
+------------------------------------------------------------
+3. SIMPLE EXAMPLES
+------------------------------------------------------------
+
+Example 1: Creating and printing
+
+public class StringDemo {
+    public static void main(String[] args) {
+        String greeting = "Hello World";
+        System.out.println(greeting);          // Hello World
+        System.out.println(greeting.length()); // 11
+    }
+}
+
+Example 2: Concatenation (joining strings)
+
+String firstName = "John";
+String lastName  = "Doe";
+String fullName  = firstName + " " + lastName;
+System.out.println(fullName);   // John Doe
+
+// Another way
+String fullName2 = firstName.concat(" ").concat(lastName);
+
+Example 3: Comparing strings
+
+String a = "Java";
+String b = "Java";
+String c = new String("Java");
+
+System.out.println(a == b);          // true  (same object in String Pool)
+System.out.println(a == c);          // false (different objects)
+System.out.println(a.equals(c));     // true  (same content)
+System.out.println(a.equalsIgnoreCase("java")); // true
+
+Example 4: Common useful methods
+
+String text = "  Hello Java  ";
+
+System.out.println(text.length());           // 13
+System.out.println(text.trim());             // "Hello Java"
+System.out.println(text.toUpperCase());      // "  HELLO JAVA  "
+System.out.println(text.toLowerCase());      // "  hello java  "
+System.out.println(text.charAt(2));          // 'H' (index starts at 0)
+System.out.println(text.substring(2, 7));    // "Hello"
+System.out.println(text.contains("Java"));   // true
+System.out.println(text.indexOf("Java"));    // 8
+System.out.println(text.replace("Java", "World")); // "  Hello World  "
+
+------------------------------------------------------------
+4. REAL-WORLD EXAMPLE
+------------------------------------------------------------
+Scenario: A simple user registration system that checks a password.
+
+public class PasswordChecker {
+    public static void main(String[] args) {
+        String password = "MySecurePass123";
+
+        // Real-world checks
+        if (password.length() < 8) {
+            System.out.println("Password too short!");
+        } else if (!password.contains("Pass")) {
+            System.out.println("Password should contain 'Pass'");
+        } else {
+            System.out.println("Password accepted.");
+            // In real apps we would hash the password, never store plain text
+            String masked = password.substring(0, 3) + "********";
+            System.out.println("Stored as: " + masked);
+        }
+    }
+}
+
+This kind of string handling is used in login systems, form validation, chat applications, file processing, etc.
+
+------------------------------------------------------------
+5. COMMON MISTAKES
+------------------------------------------------------------
+1. Using == instead of .equals()
+   - == compares memory addresses (references)
+   - .equals() compares the actual content
+   → Always use .equals() for content comparison.
+
+2. Trying to change a String (forgetting immutability)
+   String s = "Hello";
+   s.toUpperCase();          // This does NOTHING to s
+   System.out.println(s);    // still "Hello"
+   s = s.toUpperCase();      // Correct way
+
+3. NullPointerException
+   String name = null;
+   System.out.println(name.length()); // Crash!
+   Always check for null when needed:
+   if (name != null && name.length() > 0)
+
+4. Confusing index
+   - Indexes start from 0
+   - charAt(length) or substring with wrong end index causes StringIndexOutOfBoundsException
+
+5. Creating many temporary strings in loops (performance issue)
+   → Use StringBuilder instead (see advanced section).
+
+------------------------------------------------------------
+6. PRACTICE QUESTIONS (3–5)
+------------------------------------------------------------
+1. Create a string "Java Programming" and print:
+   - Its length
+   - The character at index 5
+   - The substring from index 5 to the end
+
+2. Write a program that takes two strings and checks whether they are equal (ignore case).
+
+3. Given the string "  Hello World  ", remove the leading and trailing spaces and convert it to uppercase.
+
+4. Count how many times the letter 'a' appears in the string "Java is amazing".
+
+5. Reverse a string without using any built-in reverse method (use a loop).
+
+------------------------------------------------------------
+7. INTERVIEW QUESTIONS
+------------------------------------------------------------
+Beginner / Intermediate:
+- What is a String in Java?
+- Why are Strings immutable in Java?
+- Difference between == and .equals() for Strings?
+- What is the String Pool (String Constant Pool)?
+- How do you reverse a string?
+- Difference between String, StringBuilder and StringBuffer?
+
+Advanced:
+- What happens when you concatenate strings with + inside a loop?
+- Explain the intern() method.
+- How does the JVM optimize String literals?
+- When should you use StringBuilder vs StringBuffer?
+- Can you make a String mutable? (No, but you can use StringBuilder)
+- How is memory managed for Strings?
+
+------------------------------------------------------------
+8. ONE SMALL CODING CHALLENGE
+------------------------------------------------------------
+Challenge: Palindrome Checker
+
+Write a program that checks whether a given string is a palindrome.
+A palindrome reads the same forwards and backwards (ignoring case and spaces).
+
+Examples:
+"Radar" → true
+"A man a plan a canal Panama" → true
+"Hello" → false
+
+Try to solve it yourself first.
+
+Possible solution approach:
+1. Convert the string to lowercase.
+2. Remove all spaces.
+3. Compare characters from start and end moving towards the center.
+   (or reverse the string and compare)
+
+------------------------------------------------------------
+ADVANCED CONCEPTS (Don’t skip these)
+------------------------------------------------------------
+
+A. String Pool (String Constant Pool)
+When you write:
+String s1 = "Hello";
+String s2 = "Hello";
+Both s1 and s2 point to the SAME object in the String Pool (saves memory).
+
+When you write:
+String s3 = new String("Hello");
+A new object is created in the heap (outside the pool).
+
+B. Immutability
+Once a String object is created, its value cannot be changed.
+Any “modification” creates a new String object.
+This is why String is thread-safe and can be shared safely.
+
+C. StringBuilder and StringBuffer (Mutable alternatives)
+Use them when you need to modify text many times (especially in loops).
+
+StringBuilder (not thread-safe, faster – preferred in most cases):
+
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+sb.insert(5, " Java");
+sb.reverse();
+String result = sb.toString();
+
+StringBuffer is the synchronized (thread-safe) version of StringBuilder.
+
+D. Performance tip
+Never do this in a loop:
+String result = "";
+for (int i = 0; i < 10000; i++) {
+    result += i;          // Creates thousands of temporary objects
+}
+Use StringBuilder instead.
+
+E. Useful advanced methods
+- split(regex) → breaks string into array
+- join() → joins array/list into one string
+- format() or String.format() → formatted strings
+- matches(regex) → regular expression matching
+- isEmpty() / isBlank() (Java 11+)
+
+------------------------------------------------------------
+SUMMARY FOR BEGINNERS
+------------------------------------------------------------
+- String = sequence of characters (object)
+- Create with "text" (preferred)
+- Use .equals() to compare content
+- Strings cannot be changed (immutable)
+- Learn the common methods: length, charAt, substring, equals, toUpperCase, trim, replace, contains, indexOf
+- For heavy modifications → use StringBuilder
+
+Practice the questions and the challenge above.
+Once you feel comfortable, move to StringBuilder and regular expressions.
+
+Happy coding!
