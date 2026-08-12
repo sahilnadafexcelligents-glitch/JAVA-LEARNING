@@ -9,5 +9,4 @@ public class StringComparing {
         System.out.println(a.equals(c)); // true (same content)
         System.out.println(a.equalsIgnoreCase("java")); // true
     }
-
 }
