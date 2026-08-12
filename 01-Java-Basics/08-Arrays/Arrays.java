@@ -7,7 +7,7 @@ public class Arrays {
         for (int i = 1; i < Arr.length; i++) {
             int Value = Arr[i];
             sum = sum + Value;
-            // If We Sout Here Always It Will Loop Here
+            // If We Print Here Always It Will Loop Here
         }
 
         System.out.println(sum); // Here It Dos not loop Here
