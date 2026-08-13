@@ -101,10 +101,10 @@ public class IO {
             System.out.println("Token: " + token);
         } 
         
-         Reset delimiter to default (whitespace)
-         sc.useDelimiter("\\s+");
+        // Reset delimiter to default (whitespace)
+        // sc.useDelimiter("\\s+");
         
-          =============== CLOSE SCANNER ===============
+        //  =============== CLOSE SCANNER ===============
          sc.close(); // Always close the scanner to prevent resource leak
          System.out.println("\nScanner closed successfully!");
         
