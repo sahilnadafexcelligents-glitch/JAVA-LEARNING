@@ -1,0 +1,367 @@
+================================================================================
+METHODS IN JAVA
+From Beginner to Advanced
+A Complete Step-by-Step Guide
+================================================================================
+
+Welcome! This guide assumes you are a complete beginner. We will start from zero and gradually move to advanced topics. Read every section carefully. Do not skip anything.
+
+--------------------------------------------------------------------------------
+1. WHAT IS A METHOD AND WHY DO WE USE IT?
+--------------------------------------------------------------------------------
+
+A method is a block of code that performs a specific task.
+
+Think of a method like a recipe or a machine:
+- You give it some ingredients (inputs)
+- It does some work
+- It may give you back a result (output)
+
+Why do we use methods?
+
+1. Reusability
+   Write the code once and use it many times.
+
+2. Organization
+   Break a big program into small, manageable pieces.
+
+3. Readability
+   Makes code easier to understand.
+
+4. Maintainability
+   If you need to change something, you change it in only one place.
+
+5. Avoiding repetition
+   Follows the DRY principle (Don't Repeat Yourself).
+
+Without methods, your code would be one long messy list of instructions. With methods, your code becomes clean and professional.
+
+--------------------------------------------------------------------------------
+2. BASIC SYNTAX OF A METHOD
+--------------------------------------------------------------------------------
+
+Here is the general structure of a method in Java:
+
+accessModifier returnType methodName(parameterList) {
+    // method body (the code that runs)
+    // statements...
+    return value;   // only if returnType is not void
+}
+
+Let's break it down:
+
+- accessModifier   →  public, private, protected, or default (we mostly use public for now)
+- returnType       →  What the method gives back (int, double, String, boolean, or void if nothing)
+- methodName       →  Name of the method (should be meaningful, usually starts with a verb)
+- parameterList    →  Inputs the method needs (can be empty)
+- method body      →  The actual code inside { }
+
+Naming Rules (Important):
+- Method names should start with a lowercase letter
+- Use camelCase (example: calculateTotal, printMessage)
+- Name should clearly tell what the method does
+
+--------------------------------------------------------------------------------
+3. YOUR FIRST METHOD (SIMPLE EXAMPLE)
+--------------------------------------------------------------------------------
+
+Example 1: A method that prints a message (no input, no return value)
+
+public class Main {
+    public static void main(String[] args) {
+        sayHello();          // calling the method
+    }
+
+    public static void sayHello() {
+        System.out.println("Hello, World!");
+    }
+}
+
+Explanation:
+- void means the method does not return any value
+- static means we can call it without creating an object (we will learn more later)
+- sayHello() is the method name
+- We call the method from main()
+
+Output:
+Hello, World!
+
+--------------------------------------------------------------------------------
+4. METHODS WITH PARAMETERS (INPUTS)
+--------------------------------------------------------------------------------
+
+Parameters are the variables you declare inside the method parentheses.
+Arguments are the actual values you pass when calling the method.
+
+Example 2: Method that takes a name and greets the person
+
+public class Main {
+    public static void main(String[] args) {
+        greet("Alice");
+        greet("Bob");
+    }
+
+    public static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+}
+
+Output:
+Hello, Alice!
+Hello, Bob!
+
+Here:
+- name is the parameter
+- "Alice" and "Bob" are arguments
+
+You can have multiple parameters:
+
+public static void printInfo(String name, int age) {
+    System.out.println(name + " is " + age + " years old.");
+}
+
+--------------------------------------------------------------------------------
+5. METHODS THAT RETURN A VALUE
+--------------------------------------------------------------------------------
+
+When a method calculates something and gives the result back, we use a return type other than void.
+
+Example 3: Add two numbers and return the sum
+
+public class Main {
+    public static void main(String[] args) {
+        int result = add(10, 20);
+        System.out.println("Sum is: " + result);
+
+        // You can also use it directly
+        System.out.println("Sum is: " + add(5, 7));
+    }
+
+    public static int add(int a, int b) {
+        int sum = a + b;
+        return sum;          // returns the value
+    }
+}
+
+Important Rules about return:
+- The return type must match what you return
+- Once return is executed, the method stops
+- You must return a value if the return type is not void
+
+--------------------------------------------------------------------------------
+6. REAL-WORLD EXAMPLE
+--------------------------------------------------------------------------------
+
+Imagine you are building a simple shopping application.
+
+We need methods for:
+- Calculating total price with tax
+- Applying discount
+- Printing a receipt
+
+public class ShoppingApp {
+
+    public static void main(String[] args) {
+        double price1 = 49.99;
+        double price2 = 29.50;
+        double taxRate = 0.08;     // 8% tax
+        double discount = 10.0;    // $10 discount
+
+        double subtotal = price1 + price2;
+        double totalWithTax = calculateTotalWithTax(subtotal, taxRate);
+        double finalAmount = applyDiscount(totalWithTax, discount);
+
+        printReceipt(subtotal, totalWithTax, discount, finalAmount);
+    }
+
+    public static double calculateTotalWithTax(double amount, double taxRate) {
+        return amount + (amount * taxRate);
+    }
+
+    public static double applyDiscount(double amount, double discount) {
+        if (discount > amount) {
+            return 0;   // cannot have negative total
+        }
+        return amount - discount;
+    }
+
+    public static void printReceipt(double subtotal, double withTax, double discount, double finalAmount) {
+        System.out.println("========== RECEIPT ==========");
+        System.out.println("Subtotal:       $" + subtotal);
+        System.out.println("After Tax:      $" + withTax);
+        System.out.println("Discount:       -$" + discount);
+        System.out.println("Final Amount:   $" + finalAmount);
+        System.out.println("=============================");
+    }
+}
+
+This shows how methods make real programs clean and easy to manage.
+
+--------------------------------------------------------------------------------
+7. IMPORTANT CONCEPTS (STEP-BY-STEP)
+--------------------------------------------------------------------------------
+
+A. Local Variables vs Parameters
+- Variables declared inside a method are local. They exist only inside that method.
+- Parameters are also local to the method.
+
+B. Method Overloading (Very Important)
+You can have multiple methods with the same name as long as their parameter lists are different.
+
+public static int add(int a, int b) {
+    return a + b;
+}
+
+public static double add(double a, double b) {
+    return a + b;
+}
+
+public static int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+Java decides which method to call based on the arguments you pass. This is called compile-time polymorphism.
+
+C. Static vs Non-Static Methods
+- static methods belong to the class. You can call them without creating an object.
+- Non-static (instance) methods belong to an object. You need to create an object first.
+
+Example of instance method:
+
+public class Calculator {
+    public int multiply(int a, int b) {   // not static
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();  // create object
+        int result = calc.multiply(4, 5);
+        System.out.println(result);
+    }
+}
+
+D. Recursion (Advanced but Important)
+A method that calls itself.
+
+Example: Calculate factorial
+
+public static int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;                 // base case (very important!)
+    }
+    return n * factorial(n - 1);  // recursive call
+}
+
+Always have a base case, otherwise you will get StackOverflowError.
+
+E. Variable Arguments (Varargs) - Advanced
+When you don't know how many arguments will be passed:
+
+public static int sum(int... numbers) {
+    int total = 0;
+    for (int num : numbers) {
+        total += num;
+    }
+    return total;
+}
+
+// Can be called as:
+sum(1, 2, 3);
+sum(10, 20, 30, 40, 50);
+sum();   // also valid
+
+--------------------------------------------------------------------------------
+8. COMMON MISTAKES BEGINNERS MAKE
+--------------------------------------------------------------------------------
+
+1. Forgetting to call the method
+   You wrote the method but never called it from main or another method.
+
+2. Wrong return type
+   Declared int but returned a String (or forgot to return anything).
+
+3. Mismatch between parameters and arguments
+   Method expects two ints but you passed a String.
+
+4. Using a variable outside its method (scope error)
+
+5. Infinite recursion (no base case)
+
+6. Calling a non-static method from a static context without an object
+
+7. Changing parameter names but forgetting to update the body
+
+8. Putting a semicolon after the method header by mistake:
+   public static void greet();   ← Wrong! This is just a declaration.
+
+--------------------------------------------------------------------------------
+9. PRACTICE QUESTIONS (Try these yourself)
+--------------------------------------------------------------------------------
+
+1. Write a method called isEven that takes an int and returns true if the number is even, false otherwise.
+
+2. Write a method called max that takes three integers and returns the largest one.
+
+3. Write a method called printTable that takes an integer n and prints the multiplication table of n from 1 to 10.
+
+4. Write a method called countVowels that takes a String and returns how many vowels (a, e, i, o, u) it contains (ignore case).
+
+5. Write a recursive method called power that calculates a raised to the power b (a^b).
+
+--------------------------------------------------------------------------------
+10. INTERVIEW QUESTIONS ON METHODS
+--------------------------------------------------------------------------------
+
+1. What is a method in Java?
+2. What is the difference between a method and a function? (In Java we mostly say method)
+3. What is method overloading? Give an example.
+4. Can we overload methods just by changing the return type? Why or why not?
+5. What is the difference between static and non-static methods?
+6. What is recursion? What is a base case?
+7. What happens if a non-void method does not have a return statement?
+8. Explain pass-by-value in Java methods.
+9. What are varargs? When would you use them?
+10. Can a main method be overloaded? Can it be recursive?
+
+--------------------------------------------------------------------------------
+11. SMALL CODING CHALLENGE
+--------------------------------------------------------------------------------
+
+Challenge Title: Temperature Converter
+
+Create a class called TemperatureConverter with the following methods:
+
+1. celsiusToFahrenheit(double celsius) → returns Fahrenheit
+2. fahrenheitToCelsius(double fahrenheit) → returns Celsius
+3. celsiusToKelvin(double celsius) → returns Kelvin
+4. A main method that:
+   - Converts 25°C to Fahrenheit and prints it
+   - Converts 77°F to Celsius and prints it
+   - Converts 25°C to Kelvin and prints it
+
+Formulas:
+- Fahrenheit = (Celsius × 9/5) + 32
+- Celsius = (Fahrenheit − 32) × 5/9
+- Kelvin = Celsius + 273.15
+
+Try to write clean methods and call them properly.
+
+--------------------------------------------------------------------------------
+12. FINAL TIPS FOR MASTERY
+--------------------------------------------------------------------------------
+
+- Always give methods meaningful names.
+- Keep methods short and focused on one task (Single Responsibility).
+- Prefer returning values instead of printing inside methods when possible (more flexible).
+- Practice writing methods every day.
+- After learning methods well, move to classes and objects (Object-Oriented Programming).
+
+You now have a solid foundation in Java Methods — from beginner to advanced level.
+
+Keep practicing. The more methods you write, the better you will become.
+
+Happy Coding!
+
+================================================================================
+End of Guide
+================================================================================
